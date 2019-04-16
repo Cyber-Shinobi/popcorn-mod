@@ -1,7 +1,13 @@
 minetest.register_craftitem("popcorn:popcorn", {
 	description = "Popcorn!",
 	inventory_image = "popcorn_popcorn.png",
-	on_use = minetest.item_eat(1),
+	on_use = minetest.item_eat(2),
+})
+
+minetest.register_craftitem("popcorn:bag", {
+	description = "Popcorn bag",
+	inventory_image = "popcorn_bag.png",
+	on_use = minetest.item_eat(-2),
 })
 
 --minetest.register_craftitem("popcorn:popcornOP", {
@@ -16,6 +22,24 @@ minetest.register_craft({
 		{'', '', ''},
 		{'', 'farming:corn', ''},
 		{'', 'popcorn:bag', ''},
+	}
+})
+
+minetest.register_craft({
+	output = 'popcorn:bag',
+	recipe = {
+		{'', '', ''},
+		{'dye:white', 'default:paper', 'dye:red'},
+		{'', '', ''},
+	}
+})
+
+minetest.register_craft({
+	output = 'popcorn:bag',
+	recipe = {
+		{'', '', ''},
+		{'', 'default:paper', 'dye:red'},
+		{'', '', ''},
 	}
 })
 
