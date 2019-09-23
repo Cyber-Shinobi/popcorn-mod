@@ -1,13 +1,16 @@
 minetest.register_craftitem("popcorn:popcorn", {
 	description = "Popcorn!",
 	inventory_image = "popcorn_popcorn.png",
-	on_use = minetest.item_eat(2),
+	stack_max = 1,
+	on_use = minetest.item_eat(2, 'popcorn:bag'),
+	groups = {flammable = 3},
 })
 
 minetest.register_craftitem("popcorn:bag", {
 	description = "Popcorn bag",
 	inventory_image = "popcorn_bag.png",
 	on_use = minetest.item_eat(-2),
+	groups = {flammable = 3},
 })
 
 --minetest.register_craftitem("popcorn:popcornOP", {
@@ -76,4 +79,3 @@ minetest.register_tool("popcorn:popcorn_sword", {
 	},
 	sound = {breaks = "default_tool_breaks"},
 })
-
